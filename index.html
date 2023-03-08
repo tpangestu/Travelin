@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travelin</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="navbar">
+            <div class="brand">
+              <h2 class="fn">Travel</h2>
+              <h2 class="ls">in</h2>
+            </div>
+            <div class="menu">
+              <a class="menu-item" href="#content">Home</a>
+              <a class="menu-item" href="#package">Our Package</a>
+              <a class="menu-item" href="#call-us">Call us</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!--main-->
+    <main>
+      <section id="content">
+        <div class="content">
+          <div class="slideshow-container">
+            <h1>Your Trusted Travel Agent's</h1>
+            <h6 class="title-6">Your happines is our happiness</h6>
+
+            <div class="mySlides fade">
+              <img src="img/pic1.jpg" />
+            </div>
+
+            <div class="mySlides fade">
+              <img src="img/pic2.jpg" />
+            </div>
+
+            <div class="mySlides fade">
+              <img src="img/pic3.jpg" />
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+        </div>
+
+        <!-- java script -->
+        <script>
+          var slideIndex = 0;
+          showSlides();
+
+          function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+              slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000);
+          }
+
+          function plusSlides(n) {
+            slideIndex += n;
+            var slides = document.getElementsByClassName("mySlides");
+            if (slideIndex > slides.length) {
+              slideIndex = 1;
+            } else if (slideIndex < 1) {
+              slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+          }
+        </script>
+      </section>
+
+      <!-- content -->
+      <section id="about">
+        <div class="container">
+          <div class="about">
+            <div class="about-contact">
+              <img
+                class="img-content"
+                src="img/image.jpg"
+                alt="foto"
+              />
+              <div class="about-content">
+                <div class="content-caption">
+                  <p>"liburan makin menyenangkan bersama Travelin."</p>
+                </div>
+                <div class="content-person">
+                  <img
+                    class="image-contact"
+                    src="img/contactimg.png"
+                    alt="contact"
+                  />
+                  <div class="person-info">
+                    <h6>Tri Pangestu</h6>
+                    <p>CEO,22</p>
+                  </div>
+                </div>
+                <hr class="baris" color="black" />
+              </div>
+
+              <div class="about-information">
+                <h6 class="information-title">
+                  Ada banyak banget benefit yang bisa kamu dapetin lohh!!
+                </h6>
+                <p class="information-content">
+                  Dengan menggunakan jasa travel agent, Anda tidak perlu lagi
+                  merencanakan perjalanan Anda sendiri, seperti mencari tiket
+                  pesawat, akomodasi, transportasi, dan lain-lain.Travelin akan
+                  mengurus semuanya untuk Anda.
+                </p>
+
+                <ul class="information-list">
+                  <li class="number-1">
+                    <div class="number-list">1</div>
+                    <p class="content-list">
+                      Hemat waktu dan tenaga: Dengan menggunakan jasa travel
+                      agent, Anda dapat menghemat waktu dan tenaga karena semua
+                      persiapan perjalanan akan diurus oleh travel agent.
+                    </p>
+                  </li>
+                  <li class="number-2">
+                    <div class="number-list">2</div>
+                    <p class="content-list">
+                      Mendapatkan harga yang lebih murah: Travel agent memiliki
+                      hubungan kerja sama dengan banyak maskapai penerbangan,
+                      hotel, restoran, dan tempat wisata.
+                    </p>
+                  </li>
+                  <li class="number-3">
+                    <div class="number-list">3</div>
+                    <p class="content-list">
+                      Dapat memperoleh asuransi perjalanan: Asuransi perjalanan
+                      ini akan memberikan perlindungan jika terjadi sesuatu yang
+                      tidak diinginkan selama perjalanan, seperti kehilangan
+                      bagasi atau kecelakaan.
+                    </p>
+                  </li>
+                  <li class="number-4">
+                    <div class="number-list">4</div>
+                    <p class="content-list">
+                      Memperoleh pengalaman perjalanan yang lebih nyaman dan
+                      aman: Dengan menggunakan jasa travel agent, Anda dapat
+                      memperoleh pengalaman perjalanan yang lebih nyaman dan
+                      aman karena semua persiapan perjalanan telah diurus oleh
+                      travel agent.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact">
+            <div class="contact-card">
+              <div class="contact-title">
+                <h4>Contact Us</h4>
+                <p>
+                  sales akan menghubungi Anda 1x24 jam setelah data Anda
+                  terkirim.
+                </p>
+              </div>
+
+              <form
+                action=""
+                name="myForm"
+                onsubmit="return validateForm()"
+                method="post"
+              >
+                <div class="input-name">
+                  <label for="name">Your Name:</label>
+                  <input type="text" name="name" class="name" id="name" />
+                </div>
+
+                <div class="input-Email">
+                  <label for="Email">Email :</label>
+                  <input type="email" name="Email" class="Email" id="Email" />
+                </div>
+
+                <div class="interest">
+                  <label for="">What are you interest in?</label>
+                  <select name="" id="select">
+                    <option value="">Bali</option>
+                    <option value="">Jogja</option>
+                    <option value="">Padang</option>
+                    <option value="">Japan</option>
+                    <option value="">Swiss</option>
+                    <option value="">London</option>
+                  </select>
+                </div>
+                <div class="button-submit">
+                  <input type="submit" value="Send" class="button" />
+                </div>
+              </form>
+
+
+                  <script>
+                    function validateForm() {
+                      var name = document.forms["myForm"]["name"].value;
+                      var Email = document.forms["myForm"]["Email"].value;
+
+                      if (name == "") {
+                        alert("Nama harus diisi");
+                        return false;
+                      }
+
+                      if (Email == "") {
+                        alert("Email harus diisi");
+                        return false;
+                      }
+                    }
+                  </script>
+                </body>
+              </html>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- package -->
+      <section id="package">
+        <div class="our-package">
+          <h1 class="title1">Our</h1>
+          <h1 class="title2">Package</h1>
+        </div>
+
+        <div class="package">
+          <div class="list-package">
+            <div class="list-1">
+              <img src="img/bali.jpg" alt="" />
+              <h3>Bali</h3>
+              <p>
+                "Nikmati liburan tak terlupakan di Bali - pesona alam, budaya,
+                dan kuliner yang menggoda, hanya untukmu!"
+              </p>
+            </div>
+            <div class="list-2">
+              <img src="img/jogja.jpg" alt="" />
+              <h3>Jogja</h3>
+              <p>
+                "Jelajahi pesona Jogja yang memukau - keindahan candi, kuliner
+                lezat, seni, dan keramahan warga, tunggu apa lagi?"
+              </p>
+            </div>
+            <div class="list-3">
+              <img src="img/padang.jpg" alt="" />
+              <h3>Padang</h3>
+              <p>
+                "Jangan lewatkan pesona alam Padang yang menakjubkan - pantai,
+                gunung, dan kuliner khas yang menggugah selera, datang dan
+                nikmati sekarang!"
+              </p>
+            </div>
+          </div>
+
+          <div class="list-package-internasional">
+            <div class="list-4">
+              <img src="img/london.jpg" alt="" />
+              <h3>London</h3>
+              <p>
+                "Rasakan keajaiban kota London yang menakjubkan - sejarah yang
+                kaya, budaya yang beragam, dan pengalaman berbelanja yang tak
+                terlupakan, datang dan temukan sendiri!"
+              </p>
+            </div>
+            <div class="list-5">
+              <img src="img/japan.jpg" alt="" />
+              <h3>Japan</h3>
+              <p>
+                "Selamat datang di Jepang, negeri matahari terbit yang memukau -
+                budaya yang unik, makanan lezat, dan teknologi canggih yang akan
+                memukau Anda!"
+              </p>
+            </div>
+            <div class="list-6">
+              <img src="img/swiss.jpg" alt="" />
+              <h3>Swiss</h3>
+              <p>
+                "Temukan pesona Swiss yang memukau - keindahan pegunungan,
+                danau, keju dan cokelat lezat, serta keramahtamahan penduduk
+                setempat yang menawan."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="call-us">
+        <div class="call-action">
+          <h1>Arround The World With Travelin</h1>
+          <p>
+            Dapatkan pengalaman liburan yang menyenangkan dan mudah dengan
+            menggunakan jasa travel agent kami. Kami menyediakan paket liburan
+            terbaik dan terpercaya, mulai dari pemesanan tiket, akomodasi,
+            hingga itinerary perjalanan. Percayakan liburan Anda pada ahlinya!.
+            Ayo segera hubungi kami!
+          </p>
+          <div class="call-button">
+            <input type="button" value="Call To Action" />
+          </div>
+        </div>
+        <footer>
+          <div class="footer">
+            <p class="cr">Copy Right</p>
+            <div class="footer-1">
+              <p>Terms of service</p>
+              <p>Privacy Police</p>
+            </div>
+            <div class="footer-year">
+              <p>2023.Tri Pangestu</p>
+            </div>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
